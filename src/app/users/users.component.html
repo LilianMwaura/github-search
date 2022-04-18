@@ -1,1 +1,14 @@
-<p>users works!</p>
+div class="container-fluid">
+    <h2 class="text-center">Search for a Github User</h2>
+    <hr>
+    <form (ngSubmit)='submitUsers()'#usersForm='ngForm'>
+        <div class="form-group">
+  
+            <label for="name">Enter Username</label>
+            <input type="text" class="form-control" id="name"[(ngModel)]="newQuote.name" name="user" #name='ngModel' required>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                <p>Name is required</p>
+            </div>
+        </div>
+    </form>
+        

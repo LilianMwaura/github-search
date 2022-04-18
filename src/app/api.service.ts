@@ -10,10 +10,10 @@ export class ApiService {
   constructor(private http : HttpClient) { }
 
   getUsers() :Observable<ApiInterface>{
-    return this.http.get<ApiInterface>(this.BASE_URL + "/users")
+    return this.http.get<ApiInterface>(`${this.BASE_URL}/users`)
   }
   getRepos(){
-    return this.http.get<ApiInterface>(this.BASE_URL + "/repositories")
+    return this.http.get<ApiInterface>(`${this.BASE_URL}/repositories`)
   }
 
 }

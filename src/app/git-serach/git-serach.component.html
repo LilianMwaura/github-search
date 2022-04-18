@@ -1,7 +1,17 @@
 <div class="container" id="landing-page">
     <h1> Github Search</h1>
     <div class="row">
-        <div class="col-md-6"></div>
+        <div class="col-md-12"><
+        <form (ngSubmit)="searchuser()" #form= "ngForm">
+           <div class="form-group">
+  
+            <label for="username">Enter Username</label>
+            <input type="text" class="form-control" id="name"[(ngModel)]="username" name="username" #name='ngModel' required>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                <p>Name is required</p>
+            </div>
+            <button (click)="toggleDetails(i)" class="btn btn-info btn-sm" id="quotes-button" >See more</button>
+        </form>
 
         <div class="col-md-6"></div>
         <app-users></app-users>

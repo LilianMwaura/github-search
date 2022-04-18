@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiInterface } from '../api-Interface';
+import { Component, OnInit, Input} from '@angular/core';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { ApiService } from '../api.service';
 export class UsersComponent implements OnInit {
   user: any= [];
   repos: any= [];
-  username!: string;
+  username!: any;
 
   constructor(private apiService: ApiService) {
     this.apiService.getUser().subscribe(user=> {
@@ -25,6 +24,8 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  @Input ()
+  
   searchUser() {
     this.apiService.updateUser(this.username);
     this.apiService.getUser().subscribe(user => {

@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsersComponent } from './users/users.component';
 import { DateCountPipe } from './date-count.pipe';
+import { HoverDirective } from './hover.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     UsersComponent,
-    DateCountPipe
+    DateCountPipe,
+    HoverDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

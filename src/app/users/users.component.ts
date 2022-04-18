@@ -8,13 +8,32 @@ import { ApiService } from '../api.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  users: ApiInterface [] = []
-  constructor(private userService: ApiService) { }
+  user: any= [];
+  repos: any= [];
+  username!: string;
 
-  ngOnInit(): void {
-    this.userService.getUsers().subscribe(
-      data => console.log(data)
-    )
+  constructor(private apiService: ApiService) {
+    this.apiService.getUsers().subscribe(users=> {
+      console.log(users);
+      this.user = users;
+    });
+    this.apiService.getRepos().subscribe(repos => {
+      // console.log(user);
+      this.repos = repos;
+    });
   }
 
+  ngOnInit(): void {
+
+  }
+  searchUser() {
+    this.apiService.updateUser(this.username);
+    this.apiService.getUsers().subscribe(users => {
+      this.user = users;
+    });
+    this.apiService.getRepos().subscribe(repos => {
+      this.repos = repos;
+    });
+  }
 }
+

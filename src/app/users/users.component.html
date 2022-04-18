@@ -1,14 +1,20 @@
-div class="container-fluid">
-    <h2 class="text-center">Search for a Github User</h2>
-    <hr>
-    <form (ngSubmit)='submitUsers()'#usersForm='ngForm'>
-        <div class="form-group">
+<div class="container" id="landing-page">
+    <h1> Github Search</h1>
+    <div class="row">
+        <div class="col-md-12">
+        <form (ngSubmit)="searchuser()" #form= "ngForm">
+           <div class="form-group">
   
-            <label for="name">Enter Username</label>
-            <input type="text" class="form-control" id="name"[(ngModel)]="newQuote.name" name="user" #name='ngModel' required>
+            <label for="username">Enter Username</label>
+            <input type="text" class="form-control"[(ngModel)]="username" name="username" #name='ngModel' required>
             <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                 <p>Name is required</p>
             </div>
-        </div>
-    </form>
-        
+            <button class="btn btn-info btn-sm"  type= submit id="quotes-button"> Submit </button>
+          </div>
+        </form>
+
+        <div class="col-md-6"></div>
+        <app-users></app-users>
+    </div>
+</div>   

@@ -6,14 +6,18 @@ import { ApiInterface } from "./api-Interface"
   providedIn: 'root'
 })
 export class ApiService {
-  BASE_URL: string = "https://api.github.com"
-  constructor(private http : HttpClient) { }
-
-  getUsers() :Observable<ApiInterface>{
-    return this.http.get<ApiInterface>(`${this.BASE_URL}/users`)
+    username: string;
+    constructor(private http:HttpClient) {
+      this.username =  'LilianMwaura';
+    }
+    getUser() {
+      return this.http.get(`https://api.github.com/users/${this.username}`)
+      
+    }
+    getRepos() {
+      return this.http.get(`https://api.github.com/users/${this.username}/repos`)
   }
-  getRepos(){
-    return this.http.get<ApiInterface>(`${this.BASE_URL}/repositories`)
+  updateUser(username: string) {
+    this.username = username;
   }
-
-}
+  }

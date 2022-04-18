@@ -13,12 +13,11 @@ export class UsersComponent implements OnInit {
   username!: string;
 
   constructor(private apiService: ApiService) {
-    this.apiService.getUsers().subscribe(users=> {
-      console.log(users);
-      this.user = users;
+    this.apiService.getUser().subscribe(user=> {
+      console.log(user);
+      this.user = user;
     });
     this.apiService.getRepos().subscribe(repos => {
-      // console.log(user);
       this.repos = repos;
     });
   }
@@ -28,8 +27,8 @@ export class UsersComponent implements OnInit {
   }
   searchUser() {
     this.apiService.updateUser(this.username);
-    this.apiService.getUsers().subscribe(users => {
-      this.user = users;
+    this.apiService.getUser().subscribe(user => {
+      this.user = user;
     });
     this.apiService.getRepos().subscribe(repos => {
       this.repos = repos;

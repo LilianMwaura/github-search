@@ -1,26 +1,35 @@
-# GithubSearch
+# Project Name
+Git-Search App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
+## Project Description
+This is an Angular application that helps users search for githubusers and repositories across Github.It uses the github Api to fetch user and repositories data.
 
-## Development server
+## Set-up Instructions
+Open Terminal {Ctrl+Alt+T}
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+git clone https://lilianmwaura.github.io/github-search/
 
-## Code scaffolding
+cd github-search
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+code . or atom . based on the text editor you have.
 
-## Build
+## Technologies used
+- HTML
+- CSS
+- Bootsrap
+- Angular CLI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Live Demo
 
-## Running unit tests
+Follow link : https://lilianmwaura.github.io/github-search/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Author and Contact Info
+Lilian Mwaura
 
-## Running end-to-end tests
+Email: wambuimwaura28@gmail.com
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## License
+Mit License
 
 ## Further help
 

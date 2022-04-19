@@ -1,10 +1,10 @@
 <div class="container-body">
-    <h1>GitSearch</h1>
+    <h1>GitSearch <img class= icon src="assets/images/github.png" alt=""></h1>
     <div class="row">
         <div class="col-md-8">
              <form (ngSubmit)="searchRepos()"#form = "ngForm" >
                 <div class="form-group" >
-                  <label for="reponame" appHover>Repository name</label>
+                  <label for="reponame">Repository name</label>
                     <input type="text" class="form-control" placeholder="Enter repository name..." [(ngModel)]="reponame" name="reponame" (keyup)="searchRepos()" style="text-align:center">
                 </div>
                 <button class="btn" type="submit">Search<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -13,4 +13,26 @@
             </form>
         </div>
     </div>
-  </div>
+</div>
+<div class="container" style="padding:10px;">
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align:center" appHover><strong> Repositories </strong></h3>
+      </div>
+      <div class="panel">
+        <div *ngFor="let repo of repos">
+          <div class="row">
+            <div class="col-md-9">
+              <h4>
+                <a target="_blank" href="{{repo.html_url}}">{{repo.name}}</a>
+              </h4>
+              <p>{{repo.description}}</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+</div>
+
+  

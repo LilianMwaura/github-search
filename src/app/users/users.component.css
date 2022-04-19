@@ -1,8 +1,8 @@
 h1{
      font-family: 'Special Elite', cursive;
      text-align: center ;
-     padding-top: 1%;
-     margin-bottom: 1%;
+     padding-top: 2%;
+     margin-bottom: 5px;
 }
 *{
    font-family:  'Poppins', sans-serif;
@@ -17,6 +17,15 @@ h1{
  padding-left: 1%;
 
 }
+.panel-title::after {
+   border-bottom: 0.2em solid #113333;
+   content:"";
+   display:block;
+   width: 5em;
+   max-width:70%;
+   margin: 0.5em auto 0;
+  }
+
 .col-md-8{
    padding-left: 2%;
 }
@@ -25,12 +34,14 @@ h1{
    padding:1%;
    padding-top: 2%;
 }
-
-
 img{
    height: 300px;
-   width: 290px;
-    
+   width: 290px;   
+ }
+.icon{
+   height: 85px;
+   width: 60px;
+   padding-bottom: 30px;
  }
  .container-body{
    background-color:#113333;
@@ -42,10 +53,12 @@ img{
  button{
     background-color: #66cccc;
     border-radius: 5px;
-    box-shadow: black;
+
  }
-.panel{
-   background-color: rgb(75, 74, 74);
+a {
+   color:#113333;
+   text-decoration: none;
+   font-weight:600;
 }
  
 

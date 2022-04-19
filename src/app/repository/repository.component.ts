@@ -9,21 +9,27 @@ import { ApiService } from '../api.service';
 export class RepositoryComponent implements OnInit {
   repos: any = [];
   reponame!: any;
+  username!: string;
+  repositories!: Object;
 
-  constructor(private apiService: ApiService) { 
-    this.apiService.getRepos().subscribe(repos => {
-      this.repos = repos;
+
+  constructor(private apiService: ApiService) {
+    this.apiService.getRepositories().subscribe(repositories => {
+      this.repositories = repositories;
     });
   }
+
   ngOnInit(): void {
-  
+
   }
+  
   searchRepos() {
-    this.apiService.getRepos().subscribe(repos => {
-      this.repos = repos;
+    this.apiService.updateUser(this.username);
+    this.apiService.getRepositories().subscribe(repositories => {
+      this.repositories = repositories;
     });
   }
-  }
+}
 
 
 

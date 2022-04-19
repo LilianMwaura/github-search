@@ -16,7 +16,11 @@ export class ApiService {
     getRepos() {
       return this.http.get(`https://api.github.com/users/${this.username}/repos`)
   }
+    getRepositories (){
+      return this.http.get(`https://api.github.com/repositories`)
+  }
   updateUser(username: string) {
     this.username = username;
   }
+
   }

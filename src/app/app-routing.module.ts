@@ -6,7 +6,7 @@ import { UsersComponent } from './users/users.component';
 const routes: Routes = [
     { path:'users', component: UsersComponent},
     { path: 'repository', component: RepositoryComponent},
-    { path: '', redirectTo:"/github", pathMatch:"full"},
+    { path: '', redirectTo:"/users", pathMatch:"full"},
     
 ];
 

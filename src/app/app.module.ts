@@ -8,6 +8,7 @@ import { UsersComponent } from './users/users.component';
 import { DateCountPipe } from './date-count.pipe';
 import { HoverDirective } from './hover.directive';
 import { FormsModule } from '@angular/forms';
+import { RepositoryComponent } from './repository/repository.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     UsersComponent,
     DateCountPipe,
-    HoverDirective
+    HoverDirective,
+    RepositoryComponent
   ],
   imports: [
     BrowserModule,

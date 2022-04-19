@@ -1,5 +1,5 @@
-<div class="container-body">
-  <h1>GitSearch</h1>
+<div class="container">
+  <h1>GitSearch </h1>
   <div class="row">
       <div class="col-md-8">
            <form (ngSubmit)="searchUser()"#form = "ngForm" >
@@ -28,30 +28,32 @@
       <div class="col-md-8 col-sm-8 col-xs-12">
         <div class="stats">
           <p>{{user.bio}}</p>
+          <br>
           <button type="button" class="btn btn-info"><span class="label label-default">{{user.public_repos}} Public Repos</span></button>&nbsp;
+
           <span class="label label-danger">{{user.company}}</span>
           <button ype="button" class="btn btn-danger"><span class="label label-danger">{{user.type}}</span></button>&nbsp;
         </div>
         <br/>
-        <ul class="list-group">
-          <li class="list-group-item">
+        <ul>
+          <li >
             <strong>Username: </strong>{{user.name}}
           </li>
-          <li class="list-group-item">
+          <br>
+          <li>
             <strong>Location: </strong>{{user.location}}
           </li>
-          <li class="list-group-item">
-            <strong>Email: </strong>{{user.email}}
-          </li>
-          <li class="list-group-item">
+          <br>
+          <li>
             <strong>Member Since: </strong>{{user.created_at|date}}&nbsp;{{user.created_at|dateCount}}&nbsp;days ago
           </li>
+          <br>
         </ul>
       </div>
     </div>
   </div>
 </div>
-<div class="container" style="padding: right 500px;">
+<div class="container" style="padding right:50px;">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title" style="text-align:center" appHover><strong>User Repos</strong></h3>
@@ -59,13 +61,13 @@
     <div class="panel-body">
       <div *ngFor="let repo of repos">
         <div class="row">
-          <div class="col-md-9">
+          <div class="col-md-8">
             <h4>
               <a target="_blank" href="{{repo.html_url}}">{{repo.name}}</a>
             </h4>
             <p>{{repo.description}}</p>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <span class="label label-primary">{{repo.forks}} Forks</span>
           </div>
         </div>
